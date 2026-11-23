@@ -1,0 +1,20 @@
+# Original source datasets
+Barometer.csv
+ConflictDat.csv
+*.csv
+*.xlsx
+
+# Externally sourced boundary datasets
+boundaries/*.geojson
+
+# R and RStudio transient files
+.Rhistory
+.RData
+.Ruserdata/
+.Rproj.user/
+.Renviron
+
+# Generated outputs
+*.RData
+*.rds
+.Rcheck/
