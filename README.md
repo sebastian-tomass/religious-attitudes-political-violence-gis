@@ -20,14 +20,7 @@ Administrative boundaries are sourced from geoBoundaries and supplementary human
 
 *Figure 2: Recorded ACLED political-violence events across surveyed administrative regions; a common logarithmic colour scale is used, while map-panel geographic scales vary.*
 
-### [TEMPLATE: GIS implementation details]
-
-- [TEMPLATE: Administrative boundary harmonisation and Q1 crosswalk details.]
-- [TEMPLATE: Spatial reference system and geometry validation details.]
-- [TEMPLATE: Point-in-polygon join and event-assignment audit details.]
-- [TEMPLATE: Interpretation of geographic coverage and limitations.]
-
-[GIS methodology template](docs/GIS_METHODS.md)
+For spatial matching code and geographic validation checks, see [GIS Methods](docs/GIS_METHODS.md).
 
 ## Survey Data
 
