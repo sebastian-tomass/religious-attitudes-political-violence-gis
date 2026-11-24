@@ -80,23 +80,3 @@ stopifnot(
   sum(RegionConflictData$event_count) == nrow(ConflictMatched)
 )
 ```
-
-## [TEMPLATE: Boundary sources]
-
-[TEMPLATE: Explain which administrative levels were used for each country and how supplementary humanitarian files were selected.]
-
-## [TEMPLATE: Administrative boundary harmonisation]
-
-[TEMPLATE: Document survey Q1 crosswalks, modified and merged polygons, and any coding assumptions.]
-
-## [TEMPLATE: Spatial processing]
-
-[TEMPLATE: Document source and projected coordinate reference systems, geometry repair, and point-in-polygon matching.]
-
-## [TEMPLATE: Unmatched events]
-
-[TEMPLATE: Explain which excluded events were outside surveyed regions and which did not spatially match.]
-
-## [TEMPLATE: GIS reproducibility]
-
-[TEMPLATE: Add source downloads, directory layout, and spatial validation steps.]
