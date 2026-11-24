@@ -74,13 +74,57 @@ Since this analysis relied on subnational averages, findings could not give inte
 
 Overall, the pooled negative association largely disappears when accounting for country differences. The findings do not establish any effect of Sharia-legislation preferences. Further context on geographic measurement and nation-specific factors are crucial to interpreting this comparison.
 
-## [TEMPLATE: Repository setup]
+## Repository Setup
 
-- [TEMPLATE: R package installation and versions.]
-- [TEMPLATE: How to obtain the source survey and conflict data.]
-- [TEMPLATE: How to obtain the boundary datasets.]
-- [TEMPLATE: How to run `Midterm_Final_CR2.R` from the project root.]
-- [TEMPLATE: Which figures and outputs are generated.]
+### Requirements
+
+The analysis was conducted in R using the following packages: `tidyverse`, `sf`, `lubridate`, `patchwork`, and `clubSandwich`.
+
+Install the required packages before running the analysis:
+
+```r
+install.packages(c("tidyverse", "sf", "lubridate", "patchwork", "clubSandwich"))
+```
+
+### Data Sources
+
+The analysis uses three sources:
+
+- **Arab Barometer Wave VII:** Survey data collected in 2021–2022. Available through [Arab Barometer](https://www.arabbarometer.org/surveys/arab-barometer-wave-vii/).
+- **ACLED:** Geolocated political-violence event data. Available through [ACLED](https://acleddata.com/).
+- **Administrative boundaries:** [geoBoundaries](https://www.geoboundaries.org/) and supplementary humanitarian boundary files for Libya and Mauritania.
+
+The original survey and conflict datasets are not included in this repository. Download the relevant datasets through their respective providers and save them as `Barometer.csv` and `ConflictDat.csv` in the project directory.
+
+### Geographic Data
+
+Administrative boundaries are used to match ACLED event coordinates to Arab Barometer survey regions through point-in-polygon spatial joins.
+
+Place the required GeoJSON files in a folder named `boundaries/`. The analysis uses geoBoundaries files for Algeria, Egypt, Iraq, Jordan, Lebanon, Morocco, Palestine, Sudan, and Tunisia, alongside `lby_admin2.geojson` and `mrt_admin1.geojson` for Libya and Mauritania.
+
+The boundary filenames must match those referenced in the R script.
+
+Further information on geographic matching and administrative boundary harmonization is available in [GIS Methods](docs/GIS_METHODS.md).
+
+### Running the Analysis
+
+1. Open `Midterm.Rproj` in RStudio.
+2. Ensure both CSV datasets and the `boundaries/` folder are in the project directory.
+3. Run `Midterm_Final_CR2.R` from the project root:
+
+```r
+source("Midterm_Final_CR2.R")
+```
+
+The script performs data cleaning, survey-weighted aggregation, geographic boundary matching, point-in-polygon spatial joins, and pooled and country fixed-effects regressions.
+
+### Outputs
+
+The analysis produces regional survey estimates and conflict event counts for 206 administrative regions across 11 Arab countries.
+
+It also generates regression summaries, country-clustered standard errors, sensitivity analyses, and visualizations of regional Sharia-legislation preferences and political violence.
+
+The conflict choropleth is exported as `ConflictMap.png`. Other plots are displayed during execution, with copies available in the repository's `figures/` directory.
 
 ## References
 
